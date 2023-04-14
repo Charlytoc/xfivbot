@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import PromptTemplate, PromptTemplateVersion
+from .models import Template, TemplateVersion
 # Register your models here.
 
-@admin.register(PromptTemplate)
-class PromptTemplateAdmin(admin.ModelAdmin):
+@admin.register(Template)
+class TemplateAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', )

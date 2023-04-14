@@ -1,6 +1,6 @@
 from django.contrib import admin
 # Import the model
-from .models import Organization, Agent, AgentCredentials, AgentEngine
+from .models import Organization, Agent, AgentCredentials
 
 # Register the model
 @admin.register(Organization)
@@ -13,12 +13,6 @@ class AgentCredentialsAdmin(admin.ModelAdmin):
     list_display = ('id', 'created_by', 'organization', 'expires_at', 'agent')
     search_fields = ['created_by__first_name', 'created_by__last_name', 'created_by__email', 'organization']
     raw_id_fields = ['organization']
-
-
-@admin.register(AgentEngine)
-class AgentEngineAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'slug', 'agent', 'owned_by')
-    search_fields = ['name', 'slug']
 
 @admin.register(Agent)
 class AgentAdmin(admin.ModelAdmin):
